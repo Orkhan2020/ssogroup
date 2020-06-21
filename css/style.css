@@ -93,6 +93,11 @@ body {
 .header__burger {
   display: none;
 }
+
+.header-logo {
+  position: relative;
+  z-index: 20;
+}
 .header__menu {
 
 }
@@ -989,6 +994,9 @@ line-height: 24px;
 .service {
   padding: 0;
 }
+.subtitle {
+  margin-bottom: 60px;
+}
 .content_ {
   margin-bottom: 30px;
 }
@@ -1006,6 +1014,12 @@ line-height: 24px;
 }
 .cards{
   margin-bottom: 30px;
+}
+.card-img {
+  margin-bottom: 10px;
+}
+.card-title {
+  margin-bottom: 18px;
 }
 .happy-clients-container{
   padding: 30px 20px 50px;
@@ -1136,6 +1150,9 @@ line-height: 24px;
   .header__burger:after{
     bottom: 0;
   }
+  .header__link.active{
+    top: 0;
+  }
 
   .header__burger.active span{
     transform: scale(0);
@@ -1152,19 +1169,19 @@ line-height: 24px;
 
   .header__menu {
     position: fixed;
-    top: -100%;
-    right: 0;
-    width: 100%;
+    top: 0;
+    right: -100%;
+    width: 80%;
     height: 100%;
     overflow: auto;
     transition: all 0.3s ease 0s;
     background-color: #fff;
-    padding: 70px 10px 20px 10px;
+    padding: 90px 10px 20px 10px;
     z-index: 2;
   }
 
   .header__menu.active{
-    top: 0;
+    right: 0;
   }
 
   .header__list {
