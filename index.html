@@ -8,6 +8,7 @@
 		<title>Business</title>
 		<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link rel="stylesheet" href="css/intlTelInput.css">
 		<!-- Кодировка страницы -->
 		<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
 		<meta name="viewport" content="width=device-width", initial-scale=1.0, maximum-scale=1.0, user-scalable="0">
@@ -20,7 +21,7 @@
 		<!--------------------------HEADER--------------------------->
 		
 
-		<header class="header" id="header">
+		<header class="header" id="top_header">
 			<div class="container">
 				<div class="header-row">
 				<a href="#"><img src="img/logo/logo.png" class="header-logo" alt="logo"></a>
@@ -30,22 +31,22 @@
 				<nav class="header__menu">
 					<ul class="header__list">
 						<li class="menu-list-item">
-							<a class="header__link main-link menu-link-active" href="#header">Home</a>
+							<a class="header__link main-link scrollto" href="#top_header">Home</a>
 						</li>
 						<li class="menu-list-item">
-							<a class="header__link main-link" href="#service">Service</a>
+							<a class="header__link main-link scrollto" href="#our_service">Service</a>
 						</li>
 						<li class="menu-list-item">
-							<a class="header__link main-link" href="#container-about">About us</a>
+							<a class="header__link main-link scrollto" href="#about_us">About us</a>
 						</li>
 						<li class="menu-list-item">
-							<a class="header__link main-link" href="#works">How it work</a>
+							<a class="header__link main-link scrollto" href="#how_it_work">How it work</a>
 						</li>
 						<li class="menu-list-item">
-							<a class="header__link main-link" href="#happy-client">Happy Clients</a>
+							<a class="header__link main-link scrollto" href="#happy_client">Happy Clients</a>
 						</li>
 						<li class="menu-list-item">
-							<a class="header__link main-link" href="#contact">Contact Us</a>
+							<a class="header__link main-link scrollto" href="#contact_us">Contact Us</a>
 						</li>
 					</ul>
 					
@@ -68,8 +69,8 @@
 				<div class="row-form">
 				<form action="mail.php" method="POST" enctype="mutipart/form-data">
 					<input class="form-area your-name" tabindex="1" type="text" name="user_name" placeholder="Full Name"required maxlength="<100>"autocomplete="off">
-					<input tabindex="2" class="form-area mail" type="email" name="user_mail" placeholder="Email Address"required autocomplete="off">
-					<input tabindex="3" class="form-area phone" type="tel" name="user_phone" placeholder="Phone Number"required autocomplete="off">
+					<input tabindex="2" class="form-area mail" type="email" name="user_email" placeholder="Email Address"required autocomplete="off">
+					<input tabindex="3" class="form-area phone_" id="phone" name="phone" type="tel" placeholder="Phone Number"required autocomplete="off">
 					<button tabindex="4" class="request" type="submit" >Request a quote</button>
 				</form>
 				</div>
@@ -98,7 +99,7 @@
 			 </div>
 			</section>
 			<!------------------------SERVICE------------------------>
-			<section class="service" id="service">
+			<section class="service" id="our_service">
 				<div class="container">
 					<div class="servise-content-main">
 					<h2 class="servise-title title">Our Services</h2>
@@ -180,7 +181,7 @@
 				</div>
 			</section>
 			<!------------------------ABOUT US----------------------->
-			<section class="container-about" id="container-about">
+			<section class="container-about" id="about_us">
 				<div class="column">
 					<div class="about-image ibg">
 					<img class="abuot_us_img" src="img/aboutus/Layer_27.png" alt="">
@@ -189,9 +190,9 @@
 				<div class="column">
 					<div class="about-content">
 						<div class="about-content-title">ABout us</div>
-						<div class="about-content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the ore recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</div>
+						<div class="about-content-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the ore recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum<span id="dots">...</span><span id="more">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the ore recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</span></div>
 						<div class="about-content-buttom">
-							<a class="about-content-item" href="#">Read more</a>
+							<a class="about-content-item" id="btn"  onclick="readMore()">Read more</a>
 						</div>
 					</div>
 				</div>
@@ -258,7 +259,7 @@
 				</div>
 			</section>-->
 			<!--------------------HOW IT WORKS----------------------->
-			<section class="works" id="works">
+			<section class="works" id="how_it_work">
 				<div class="container">
 				  <div class="works-container">
 				  	<h2 class="title">How it works</h2>
@@ -315,7 +316,7 @@
 				</div>
 			</section>
 			<!--------------------HAPPY CLIENTS---------------------->
-			<section class="happy-client" id="happy-client">
+			<section class="happy-client" id="happy_client">
 				<div class="container">
 					<div class="happy-clients-container">
 						<h4 class="title title-happy-clients">Happy Clients</h4>
@@ -421,7 +422,7 @@
 					<li class="menu-list-item footer-list"><a class="header__link footer-menu-link" href="#">Happy Clients</a></li>
 					<li class="menu-list-item footer-list"><a class="header__link footer-menu-link" href="#">Contact Us</a></li>
 				</ul>
-				<address class="address" id="contact">
+				<address class="address" id="contact_us">
 					<div class="tel-footer">
 						<a class="tel-link" href="tel:+987 9976 999"><img src="img/socials/5.png" width="16px" alt=""> +987 9976 999</a>
 					</div>
@@ -449,7 +450,10 @@
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 			<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 		    <script src="js/script.js"></script>
+		    <script src="js/jquery-latest.js"></script>
 			<!-- Подключаем слайдер Slick -->
 			<script src="js/slick.min.js"></script>
 			<script src="js/baguetteBox.js"></script>
+			<script src="js/intlTelInput.js"></script>
+  
 	</body>

@@ -6,6 +6,43 @@ $(document).ready(function() {
 	});
 });
 
+
+jQuery(document).ready(function() {
+jQuery("a.scrollto").click(function () {
+elementClick = jQuery(this).attr("href")
+destination = jQuery(elementClick).offset().top;
+jQuery("html:not(:animated),body:not(:animated)").animate({scrollTop: destination}, 1100);
+return false;
+	});
+});
+     $(document).ready(function() {
+    var input = document.querySelector("#phone");
+    window.intlTelInput(input, {
+      // allowDropdown: false,
+      // autoHideDialCode: false,
+       autoPlaceholder: "polite",
+      // dropdownContainer: document.body,
+      // excludeCountries: ["us"],
+       formatOnDisplay: true,
+       geoIpLookup: function(callback) {
+         $.get("http://ipinfo.io", function() {}, "jsonp").always(function(resp) {
+          var countryCode = (resp && resp.country) ? resp.country : "";
+           callback(countryCode);
+         });
+       },
+       hiddenInput: "full_number",
+       initialCountry: "auto",
+       localizedCountries: { 'de': 'Deutschland' },
+       nationalMode: true,
+      // onlyCountries: ['us', 'gb', 'ch', 'ca', 'do'],
+       //placeholderNumberType: "+66 93 535 27 72",
+      // preferredCountries: ['cn', 'jp'],
+      // separateDialCode: true,
+      utilsScript: "js/utils.js",
+    });
+  });
+
+
 $(document).ready(function(){
 	$('.slider').slick({
 		arrows:false,
@@ -33,6 +70,7 @@ $(document).ready(function(){
 	});
 });
 
+
 function ibg(){
 	$.each($('.ibg'), function(index, val) {
 		if($(this).find('img').length>0){
@@ -42,5 +80,21 @@ function ibg(){
 }
 ibg();
 
+function readMore() {
+  var dots = document.getElementById("dots");
+  var more = document.getElementById("more");
+  var btn = document.getElementById("btn");
+
+  if (dots.style.display === "none") {
+  	dots.style.display="inline";
+  	btn.innerHTML="READ MORE";
+  	more.style.display="none";
+  }
+  else {
+  	dots.style.display="none";
+  	btn.innerHTML="HIDE";
+  	more.style.display="inline";
+  }
+}
 
 
